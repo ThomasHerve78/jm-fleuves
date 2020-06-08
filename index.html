@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <title>Journée mondiale des fleuves</title> -->
+		<meta name="description" content="carte interractive de la journée mondiale des fleuves" />
+		<meta name="keywords" content="3d, css, javascript, pin />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+        <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css" /> -->
+        
+        <link rel="stylesheet" type="text/css" href="css/test.css" />
+        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+            .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+            .fa-anchor,.fa-coffee {font-size:200px}
+        </style>
+        
+        <script src="js/test.js"></script>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        
+        <a href="test.html" class="w3-bar-item w3-button w3-padding-large w3-white">Journée mondiale des fleuves</a>
+        <a href="https://www.cnr.tm.fr/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">CNR</a>
+        <a href="https://www.initiativesfleuves.org/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">IAGF</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">A-propos</a>
+        </div>
+    
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="test.html" class="w3-bar-item w3-button w3-padding-large">Journée mondiale des fleuves</a>
+        <a href="https://www.cnr.tm.fr/" class="w3-bar-item w3-button w3-padding-large">CNR</a>
+        <a href="https://www.initiativesfleuves.org/" class="w3-bar-item w3-button w3-padding-large">IAGF</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">A-propos</a>
+        </div>
+    </div>
+	</head>
+    <body onload="init()">
+    <div class="container">
+        <div class="main">
+            <header class="header">
+                <h2 class="titre"><strong>Journée mondiale des fleuves</strong></h3>
+
+            </header>
+          
+            <div class="carte" >
+                
+                    <!-- <svg class="hidden">
+                        <defs>
+                            <symbol id="icon-pin" viewBox="0 0 200 300">
+                                <title>pin</title>
+                                <path d="M100,21.78A85,85,0,0,0,15.18,106.6c0,18.85,12.08,49.52,36.76,93.9,17.48,31.36,34.7,57.49,35.47,58.6L100,278.22l12.59-19.11c0.69-1.11,18-27.25,35.47-58.6,24.76-44.38,36.76-75.06,36.76-93.9A85,85,0,0,0,100,21.78Z" />
+                            </symbol>
+                            <symbol id="icon-stack" viewBox="0 0 32 32">
+                                <title>stack</title>
+                                <path class="path1" d="M29.143 11.071l-13.143-6.571-13.143 6.571 13.143 6.571 13.143-6.571zM16 6.681l8.781 4.39-8.781 4.39-8.781-4.39 8.781-4.39zM26.51 14.684l2.633 1.316-13.143 6.571-13.143-6.571 2.633-1.316 10.51 5.255zM26.51 19.612l2.633 1.316-13.143 6.571-13.143-6.571 2.633-1.316 10.51 5.255z"></path>
+                            </symbol>
+                            <symbol id="icon-cross" viewBox="0 0 24 24">
+                                <title>cross</title>
+                                <path class="path1" d="M18.016 5.125q0.369 0 0.614 0.245t0.245 0.614q0 0.363-0.248 0.611l-5.411 5.405 5.411 5.405q0.248 0.248 0.248 0.611 0 0.369-0.245 0.614t-0.614 0.245q-0.363 0-0.611-0.248l-5.405-5.411-5.405 5.411q-0.248 0.248-0.611 0.248-0.369 0-0.614-0.245t-0.245-0.614q0-0.363 0.248-0.611l5.411-5.405-5.411-5.405q-0.248-0.248-0.248-0.611 0-0.369 0.245-0.614t0.614-0.245q0.363 0 0.611 0.248l5.405 5.411 5.405-5.411q0.248-0.248 0.611-0.248z"></path>
+                            </symbol>
+                            <symbol id="icon-droplet" viewBox="0 0 32 32">
+                                <title>droplet</title>
+                                <path class="path1" d="M27.020 14.786c-2.055-5.732-6.41-10.88-11.020-14.786-4.61 3.907-8.965 9.054-11.020 14.786-1.271 3.545-1.396 7.393 0.393 10.794 2.058 3.911 6.207 6.42 10.626 6.42s8.569-2.509 10.626-6.42c1.79-3.401 1.664-7.249 0.393-10.794zM23.086 23.717c-1.369 2.602-4.15 4.283-7.086 4.283-1.723 0-3.391-0.579-4.753-1.583 0.414 0.054 0.832 0.083 1.254 0.083 3.67 0 7.146-2.1 8.856-5.351 1.402-2.665 1.281-5.433 0.746-7.636 0.455 0.88 0.841 1.756 1.151 2.623 0.706 1.971 1.251 4.886-0.168 7.581z"></path>
+                            </symbol>
+                        </defs>
+                    </svg> -->
+                <div class="display-carte">
+                    <svg width="100%" height="100%" viewBox="0 0 1000 1000"
+                        class="svg-carte"
+                        xmlns="http://www.w3.org/2000/svg" 
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        > 	 		
+                        <image href="img/carte_2.svg"/>  
+                        <title id="title10">Carte</title>
+                        <g>
+                            <image href="img/square.svg" id="rect1" width="25" height="25" x="650" y="440" />  
+                            <!-- <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect1"
+                        data-space="1.01"
+                        class="map__space"
+                        width="25"
+                        height="25"
+                        x="650"
+                        y="440" /> -->
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect2"
+                        data-space="1.02"
+                        width="25"
+                        height="25"
+                        x="647"
+                        y="470" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect3"
+                        data-space="1.03"
+                        width="25"
+                        height="25"
+                        x="642"
+                        y="500" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect4"
+                        data-space="1.04"
+                        width="25"
+                        height="25"
+                        x="639"
+                        y="530" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect5"
+                        data-space="1.05"
+                        width="25"
+                        height="25"
+                        x="615"
+                        y="460" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect6"
+                        data-space="1.06"
+                        width="25"
+                        height="25"
+                        x="610"
+                        y="490" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect7"
+                        data-space="1.07"
+                        width="25"
+                        height="25"
+                        x="620"
+                        y="620" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect8"
+                        data-space="1.08"
+                        width="25"
+                        height="25"
+                        x="625"
+                        y="580" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect9"
+                        data-space="1.09"
+                        width="25"
+                        height="25"
+                        x="619"
+                        y="420" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect10"
+                        data-space="1.10"
+                        width="20"
+                        height="20"
+                        x="619"
+                        y="390" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect11"
+                        data-space="1.11"
+                        width="20"
+                        height="20"
+                        x="622"
+                        y="350" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect12"
+                        data-space="1.12"
+                        width="20"
+                        height="20"
+                        x="625"
+                        y="320" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect13"
+                        data-space="1.13"
+                        width="20"
+                        height="20"
+                        x="637"
+                        y="290" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect14"
+                        data-space="1.14"
+                        width="20"
+                        height="20"
+                        x="637"
+                        y="260" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect15"
+                        data-space="1.15"
+                        width="20"
+                        height="20"
+                        x="637"
+                        y="230" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect16"
+                        data-space="1.16"
+                        width="20"
+                        height="20"
+                        x="642"
+                        y="190" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect17"
+                        data-space="1.17"
+                        width="20"
+                        height="20"
+                        x="645"
+                        y="140" />
+                        </g>
+                        <g>
+                            <rect
+                        style="fill:#000000;fill-opacity:1"
+                        id="rect18"
+                        data-space="1.18"
+                        width="20"
+                        height="20"
+                        x="650"
+                        y="110" />
+                        </g>
+                        
+                    </svg>
+                </div>
+            
+                
+            </div><!-- carte -->
+            <div class="info-carte"><!-- info carte -->
+                <div class="info-stand hidden" id="info-rect1" >
+                    <h3 class="info-titre">Expériences et pédagogie sur la pollution plastique </h3>
+                    <img class="info-img" src="img/exp-plastiqe.jpg">
+                    <p class="info-text">Vous le savez tous, la pollution plastique est l'un des grand enjeux de notre époque : nos plages et nos océans en sont remplis.
+                        Ce que vous ne savez peut-être pas, c'est qu'une grande partie de ces plastiques sont sous la forme de microplastiques : des particules si fines qu'elles sont presque invisibles. Et on en trouve partout : l'eau des océans, mais aussi dans l'eau des fleuves.
+                        Venez comprendre la pollution plastique, et pourquoi nous devons réduire drastiquement notre consommation de plastique
+                    </p>
+                    <h4>Sur le Stand</h4>
+                    <p class="info-text">Plusieurs expériences montrant l'impact du plastique, et ainsi que des discussion avec des professionnels 
+
+ 
+                    </p>
+
+                    <h4>Idée d'expérience :  </h4>
+                    <p class="info-text">
+                        Présenter 4 aquarium côte à côté, et montrer les différent stade de la décomposition du plastique en microplastique  </p>
+                  
+                    <br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/RS7IzU2VJIQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </div>
+                <div id="info-rect2" class="info-stand hidden">
+                    <h3 class="info-titre">Venez vivre une expérience à 360° grâce au stand VR </h3>
+                    <img class="info-img" src="img/sea.jpg" >
+                    <p class="info-text">
+                        Sur ce Stand, nous vous proposons de découvrir la beauté des océans de l'intérieur.  
+                        Grâce à la technologie de réalité virtuelle, plongée au cœur des océans. 
+                        Emerveillement garanti !  
+                    </p>
+                    <img class="info-img" src="img/htc_vive.jpg" >
+                    
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BDo8XiGI1Hc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </div>
+                <div id="info-rect3" class="info-stand hidden">
+                    <h3 class="info-titre">L'application WAG : des solutions au quotidien </h3>
+                    <img class="info-img" src="img/wag.jpg" >
+                    <p class="info-text">
+                        Besoin d'un coup de pouce pour protéger les fleuves au quotidien? </p>
+                    <p class="info-text">
+                        L'application WAG vous permet de retrouver tous nos conseils pour rendre les fleuves plus propres.  
+                        Vous pourrez aussi retrouver la communauté IAGF et partager ensemble vos progrès.  
+                    </p> 
+                        
+                    
+                    <br>
+                    <br>
+                    <iframe src="https://player.vimeo.com/video/305103731?color=ffffff&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/305103731">WAG - We Act for Good</a> from <a href="https://vimeo.com/user92563395">WAG We Act For Good</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                </div>
+                <div id="info-rect4" class="info-stand hidden">
+                    <h3>Tables rondes</h3>
+                    <p class="info-text"> 
+                        Lors de cette journée, nous vous proposons aussi des discussions avec des professionnels, afin d'aborder les thématiques suivantes :  
+                    </p>
+                    <ul>
+                        <li>Pollution plastique dans le fleuve </li><br><br>
+                        <li>L'Histoire du Rhône et de la Saône </li><br><br>
+                    </ul>
+                </div>
+                <div id="info-rect5" class="info-stand hidden">
+                    <h3>L'art et le plastique </h3>
+                    <p class="info-text">Dans le monde, de nombreux artistes utilisent le plastique pour créer des œuvres et ainsi sensibiliser la population. Le résultat est bluffant.  
+                        Sur le stand :  
+                        Vous découvrirez une exposition photo des œuvres d'une dizaine d'artistes. En voici trois d'entre eux :  
+                    </p>
+                    <h4>Mady Barker</h4>
+                    <p class="info-text">Mandy Barker photographie les déchets trouvés dans les mers et les océans. Elle participe aux collectes de déchets avec des scientifiques ou encore des associations comme Greenpeace. Son travail consiste ensuite à photographier tous ces morceaux de plastique et créer des galaxies de déchets en utilisant des logiciels comme photoshop. 
+                    </p>
+                    <p class="info-text">
+                        Elle explique : « Le but de mon travail est d’engager et de stimuler une réponse émotionnelle pour le spectateur, en combinant une contradiction entre l’attraction esthétique initiale et le message de conscience. Le processus de recherche est une partie vitale du développement de mes images, elles sont basées sur des faits scientifiques qui sont essentiels pour l’intégrité de mon travail. » 
+                    </p>
+                    <img class="info-img" src="img/galaxy.png">
+                    <h4>Angela Haseltine Pozzi</h4>
+                    <p class="info-text">
+                        Angela Haseltine Pozzi transforme les déchets qui s’échouent sur les plages de l’Oregon en œuvre d’art. Elle réalise ces œuvres avec une équipe de bénévoles qui l’aide à ramasser les déchets, à les nettoyer, à les trier par couleur puis à les assembler. Elle a ainsi créé une communauté appelée « Washed Ashore Project » fondée en 2010. 
+                    </p>
+                    <p class="info-text">
+                        Depuis la fondation de cet organisme à but non lucratif, plus de 10 000 bénévoles ont nettoyé plus de 300 miles (482 kilomètres) en récupérant 38 000 livres de déchets sur les côtes. Ces matières ont été transformées en plus de 60 œuvres monumentales. Certaines sont exposées dans des jardins et musées aux Etats-Unis. 
+                    </p>
+                    <img class="info-img" src="img/poisson.png">
+                    <p class="info-text">
+                        Pour dénoncer la pollution des océans par les plastiques, le photographe Canadien Benjamin Von Wong  a eu l'idée de récupérer des bouteilles en plastique et d’en faire des décors mettant en scène des sirènes. 
+                    </p>
+                    <img class="info-img" src="img/mermaid.png">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vdZ5AWaNQqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </div>
+                <div id="info-rect6" class="info-stand hidden">
+                    <h3 >Statue de plastique </h3>
+                    <p class="info-text">Chaque jour, nous consommons du plastique, mais savez-vous ce que représente cette quantité en terme de volume sur un an ? 
+
+                        Venez le découvrir en nous rejoignant le jour J. 
+                        
+                        Les plastiques utilisés seront récupérés lors d'une ou plusieurs collectes réalisées dans les rues lyonnaises. 
+                    </p>
+                    <p class="info-text">
+                        Sur le stand : 
+                        Vous vous retrouverez en face d'une montagne de plastique géante qui vous donnera une idée de la consommation annuelle de plastique d'une famille de 4 personnes. Etant donné qu'un Français consomme en moyenne 68 kilos de plastique, cette montagne fera donc 272 kilos. 
+                    </p>
+
+                    <img class="info-img" src="img/pubelle.png">
+                </div>
+                <div id="info-rect7"class="info-stand hidden" >
+                    <h3>Tunnel émotion </h3>
+                    <p class="info-text"> 
+                        Nous vous proposons une immersion sensorielle dans le tunnel émotion.      
+                        
+                        Ce tunnel se déroulera sur plusieurs dizaines de mettre, dans un tunnel clos dans lequel va être projeté des images des fonds marin, ainsi qu'une ambiance sonore d'animaux marins. 
+                        
+                        Le but est de recréer une atmosphère sous-marine. A l'aide de projecteurs et de son ambiance sonore, ce tunnel va vous immerger au cœur des océans</p>
+                    <img class="info-img "src="img/tunnel.jpg">
+                    <img class="info-img "src="img/tunnel2.jpg">
+                    <img class="info-img "src="img/LSA (1).png">
+                    <img class="info-img "src="img/VLS.jpg">
+                </div>
+                <div id="info-rect8" class="info-stand hidden">
+                    <h3>Retransmission digitale de la journée </h3>
+                    <p class="info-text">Afin de rendre cet évènement international, nous allons digitaliser l'évènement. Durant toute la journée, un présentateur et un caméraman vont naviguer entre les différents stands et présentation, et vont retransmettre en direct l'évènement, afin de le partager à tous. La journée sera retransmise en live sur internet, sur YouTube et Twitch, avec des sous-titres en anglais en direct. </p>
+                    <img class="info-img" src="img/yt_logo_rgb_light.png">
+                    <img class="info-img" src="img/TwitchExtrudedWordmarkPurple.png">
+                </div>
+                <div id="info-rect9" class="info-stand hidden">
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+                <div id="info-rect10"class="info-stand hidden" >
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+                <div id="info-rect11" class="info-stand hidden">
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+                <div id="info-rect12" class="info-stand hidden">
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+                <div id="info-rect13" class="info-stand hidden">
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+                <div id="info-rect14"class="info-stand hidden" >
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+                <div id="info-rect15"class="info-stand hidden" >
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+                <div id="info-rect16" class="info-stand hidden">
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+                <div id="info-rect17" class="info-stand hidden">
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+                <div id="info-rect18" class="info-stand hidden">
+                    <p>HELLO WORLD !</p>
+                    <img src="img/mir100.png">
+                </div>
+            </div>
+            <div class="footer"></div>
+        
+        </div><!-- main -->
+       
+    </div><!-- container -->
+
+	
+    </body>
+</html>

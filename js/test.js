@@ -17,16 +17,19 @@ function init() {
 }
 
 function displayElem(rectId){
+	document.getElementById("base").classList.add('hidden');
 	
 
 	
 	if(rectId == currentElem && displayed == true){
 		document.getElementById(currentElem).style.fill= "black";
 		document.getElementById("info-"+ currentElem).classList.add('hidden');
+		document.getElementById("base").classList.remove('hidden');
 		displayed = false;
 	}	else if(rectId == currentElem && displayed == false){
 		document.getElementById(currentElem).style.fill= "blue";
 		document.getElementById("info-"+ currentElem).classList.remove('hidden');
+		document.getElementById("base").classList.add('hidden');
 		displayed = true;
 	}   else if (rectId != currentElem && currentElem!="")	{
 		document.getElementById(rectId).style.fill= "blue";
@@ -34,10 +37,12 @@ function displayElem(rectId){
 		console.log(currentElem);
 		document.getElementById(currentElem).style.fill= "black";
 		document.getElementById("info-"+ currentElem).classList.add('hidden');
+		document.getElementById("base").classList.add('hidden');
 		displayed = true;
 	}   else if (currentElem=""){
 		document.getElementById(rectId).style.fill= "blue";
 		document.getElementById("info-"+rectId).classList.remove('hidden');
+		document.getElementById("base").classList.remove('hidden');
 		displayed = true;
 
 	}	

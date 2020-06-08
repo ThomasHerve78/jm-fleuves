@@ -32,7 +32,7 @@
         <a href="test.html" class="w3-bar-item w3-button w3-padding-large w3-white">Journée mondiale des fleuves</a>
         <a href="https://www.cnr.tm.fr/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">CNR</a>
         <a href="https://www.initiativesfleuves.org/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">IAGF</a>
-        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">A-propos</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" onclick="about()">A-propos</a>
         </div>
     
         <!-- Navbar on small screens -->
@@ -40,7 +40,7 @@
         <a href="test.html" class="w3-bar-item w3-button w3-padding-large">Journée mondiale des fleuves</a>
         <a href="https://www.cnr.tm.fr/" class="w3-bar-item w3-button w3-padding-large">CNR</a>
         <a href="https://www.initiativesfleuves.org/" class="w3-bar-item w3-button w3-padding-large">IAGF</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">A-propos</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="about()">A-propos</a>
         </div>
     </div>
 	</head>
@@ -75,15 +75,16 @@
                         </defs>
                     </svg> -->
                 <div class="display-carte">
-                    <svg width="100%" height="100%" viewBox="0 0 1000 1000"
+                    <svg width="100%" height="100%" viewBox="0 0 800 800"
                         class="svg-carte"
                         xmlns="http://www.w3.org/2000/svg" 
                         xmlns:xlink="http://www.w3.org/1999/xlink"
                         > 	 		
                         <image href="img/carte_2.svg"/>  
-                        <title id="title10">Carte</title>
+                        <image href="img/start.svg" width="50" height="50" x="640" y="0"/> 
+                        <title id="title10">Carte berges</title>
                         <g>
-                            <!-- <image href="img/square.svg" id="rect1" width="25" height="25" x="650" y="440" />  --> 
+                  
                         <rect
                             style="fill:#000000;fill-opacity:1"
                             id="rect1"
@@ -92,17 +93,21 @@
                             width="25"
                             height="25"
                             x="650"
-                            y="440" />
+                            y="440"  />
+          
                         </g>
                         <g>
-                            <rect
-                        style="fill:#000000;fill-opacity:1"
-                        id="rect2"
-                        data-space="1.02"
-                        width="25"
-                        height="25"
-                        x="647"
-                        y="470" />
+                        <rect
+                            style="fill:#000000;fill-opacity:1"
+                            id="rect2"
+                            data-space="1.02"
+                            width="25"
+                            height="25"
+                            x="647"
+                            y="470" >
+                        </rect>
+                      
+                        
                         </g>
                         <g>
                             <rect
@@ -111,8 +116,8 @@
                         data-space="1.03"
                         width="25"
                         height="25"
-                        x="642"
-                        y="500" />
+                        x="620"
+                        y="540" />
                         </g>
                         <g>
                             <rect
@@ -121,8 +126,8 @@
                         data-space="1.04"
                         width="25"
                         height="25"
-                        x="639"
-                        y="530" />
+                        x="620"
+                        y="580" />
                         </g>
                         <g>
                             <rect
@@ -131,7 +136,7 @@
                         data-space="1.05"
                         width="25"
                         height="25"
-                        x="615"
+                        x="610"
                         y="460" />
                         </g>
                         <g>
@@ -142,7 +147,7 @@
                         width="25"
                         height="25"
                         x="610"
-                        y="490" />
+                        y="500" />
                         </g>
                         <g>
                             <rect
@@ -161,8 +166,8 @@
                         data-space="1.08"
                         width="25"
                         height="25"
-                        x="625"
-                        y="580" />
+                        x="620"
+                        y="400" />
                         </g>
                         <g>
                             <rect
@@ -171,79 +176,105 @@
                         data-space="1.09"
                         width="25"
                         height="25"
-                        x="619"
-                        y="420" />
+                        x="620"
+                        y="350" />
                         </g>
                         <g>
                             <rect
                         style="fill:#000000;fill-opacity:1"
                         id="rect10"
                         data-space="1.10"
-                        width="20"
-                        height="20"
-                        x="619"
-                        y="390" />
+                        width="25"
+                        height="25"
+                        x="630"
+                        y="300" />
                         </g>
                         <g>
                             <rect
                         style="fill:#000000;fill-opacity:1"
                         id="rect11"
                         data-space="1.11"
-                        width="20"
-                        height="20"
-                        x="622"
-                        y="350" />
+                        width="25"
+                        height="25"
+                        x="630"
+                        y="250" />
                         </g>
                         <g>
                             <rect
                         style="fill:#000000;fill-opacity:1"
                         id="rect12"
                         data-space="1.12"
-                        width="20"
-                        height="20"
-                        x="625"
-                        y="320" />
+                        width="25"
+                        height="25"
+                        x="640"
+                        y="200" />
                         </g>
                         <g>
                             <rect
                         style="fill:#000000;fill-opacity:1"
                         id="rect13"
                         data-space="1.13"
-                        width="20"
-                        height="20"
-                        x="637"
-                        y="290" />
+                        width="25"
+                        height="25"
+                        x="640"
+                        y="150" />
                         </g>
                         <g>
                             <rect
                         style="fill:#000000;fill-opacity:1"
                         id="rect14"
                         data-space="1.14"
-                        width="20"
-                        height="20"
-                        x="637"
-                        y="260" />
+                        width="25"
+                        height="25"
+                        x="650"
+                        y="100" />
                         </g>
                         <g>
                             <rect
                         style="fill:#000000;fill-opacity:1"
                         id="rect15"
                         data-space="1.15"
-                        width="20"
-                        height="20"
-                        x="637"
-                        y="230" />
+                        width="25"
+                        height="25"
+                        x="650"
+                        y="60" />
                         </g>
                         <g>
+                            <!-- <rect
+                                style="fill:#CCC;fill-opacity:1"
+                                id="rect18"
+                                data-space="1.18"
+                                width="280"
+                                height="158"
+                                x="0"
+                                y="530" /> -->
+                         
+                            <image href="img/focus.svg"width="280"
+                            height="158"x="0"
+                            y="530"/>  
+                            <text x="50" y="525" 
+                                font-family="Arial" 
+                                font-size="45">
+                                Bellecour
+                            </text>
                             <rect
+                            style="fill:#000000;fill-opacity:1"
+                            id="rect16"
+                            data-space="1.16"
+                            width="50"
+                            height="50"
+                            x="115"
+                            y="585" />
+                         <!--    <rect
                         style="fill:#000000;fill-opacity:1"
                         id="rect16"
                         data-space="1.16"
-                        width="20"
-                        height="20"
-                        x="642"
-                        y="190" />
+                        width="50"
+                        height="50"
+                        x="115"
+                        y="585" />
                         </g>
+                       
                         <g>
                             <rect
                         style="fill:#000000;fill-opacity:1"
@@ -253,19 +284,19 @@
                         height="20"
                         x="645"
                         y="140" />
-                        </g>
-                        <g>
-                            <rect
-                        style="fill:#000000;fill-opacity:1"
-                        id="rect18"
-                        data-space="1.18"
-                        width="20"
-                        height="20"
-                        x="650"
-                        y="110" />
-                        </g>
+                        </g> -->
+                      
+                            
                         
                     </svg>
+                  <!--   <svg width="100%" height="100%" viewBox="0 0 1000 1000"
+                        class="svg-carte"
+                        xmlns="http://www.w3.org/2000/svg" 
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        > 	 		
+                        <image href="img/bellecour.svg"/>  
+                        <title id="title10">Carte Bellecour</title>
+                    </svg> -->
                 </div>
             
                 
@@ -273,10 +304,10 @@
             <div class="info-carte"><!-- info carte -->
                 <div id="base"class="info-base">
                     <p class="info-text">
-                        Bienvenu à la première journée mondiale des fleuves. Pour interragir avec la carte, cliquer sur les stands (carrés noirs). Merci
+                        Bienvenue à la première journée mondiale des fleuves. Pour interragir avec la carte, cliquer sur les stands (carrés noirs). Merci
                     </p>
                 </div>
-                <div class="info-stand hidden" id="info-rect1" >
+                <div class="info-stand hidden" id="info-rect13" >
                     <h3 class="info-titre">Expériences et pédagogie sur la pollution plastique </h3>
                     <img class="info-img" src="img/exp-plastiqe.jpg">
                     <p class="info-text">Vous le savez tous, la pollution plastique est l'un des grand enjeux de notre époque : nos plages et nos océans en sont remplis.
@@ -297,7 +328,7 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/RS7IzU2VJIQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 </div>
-                <div id="info-rect2" class="info-stand hidden">
+                <div id="info-rect14" class="info-stand hidden">
                     <h3 class="info-titre">Venez vivre une expérience à 360° grâce au stand VR </h3>
                     <img class="info-img" src="img/sea.jpg" >
                     <p class="info-text">
@@ -326,17 +357,26 @@
                     <iframe src="https://player.vimeo.com/video/305103731?color=ffffff&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/305103731">WAG - We Act for Good</a> from <a href="https://vimeo.com/user92563395">WAG We Act For Good</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
                 </div>
-                <div id="info-rect4" class="info-stand hidden">
+                <div id="info-rect8" class="info-stand hidden">
                     <h3>Tables rondes</h3>
+                    <img class="info-img" src="img/Tables rondes.png">
                     <p class="info-text"> 
                         Lors de cette journée, nous vous proposons aussi des discussions avec des professionnels, afin d'aborder les thématiques suivantes :  
                     </p>
                     <ul>
                         <li>Pollution plastique dans le fleuve </li><br><br>
                         <li>L'Histoire du Rhône et de la Saône </li><br><br>
+                        <li>Réhabilitation des lônes, les "bras" du Rhône </li>
+                        <li>La gestion durable des fleuves </li>
+                        <li>Les aménagements du Rhône </li>
+                        <li>Les dangers de la surpêche </li>       
                     </ul>
+                    <img class="info-img" src="img/Logo_Université_de_Lyon.png">
+                    <img class="info-img" src="img/taraexpeditions-fondation-logo-site-en-2.png">
+                    
                 </div>
-                <div id="info-rect5" class="info-stand hidden">
+
+                <div id="info-rect12" class="info-stand hidden">
                     <h3>L'art et le plastique </h3>
                     <p class="info-text">Dans le monde, de nombreux artistes utilisent le plastique pour créer des œuvres et ainsi sensibiliser la population. Le résultat est bluffant.  
                         Sur le stand :  
@@ -364,7 +404,7 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/vdZ5AWaNQqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 </div>
-                <div id="info-rect6" class="info-stand hidden">
+                <div id="info-rect16" class="info-stand hidden">
                     <h3 >Statue de plastique </h3>
                     <p class="info-text">Chaque jour, nous consommons du plastique, mais savez-vous ce que représente cette quantité en terme de volume sur un an ? 
 
@@ -379,7 +419,7 @@
 
                     <img class="info-img" src="img/pubelle.png">
                 </div>
-                <div id="info-rect7"class="info-stand hidden" >
+                <div id="info-rect15"class="info-stand hidden" >
                     <h3>Tunnel émotion </h3>
                     <p class="info-text"> 
                         Nous vous proposons une immersion sensorielle dans le tunnel émotion.      
@@ -392,52 +432,91 @@
                     <img class="info-img "src="img/LSA (1).png">
                     <img class="info-img "src="img/VLS.jpg">
                 </div>
-                <div id="info-rect8" class="info-stand hidden">
+                <div id="info-rect11" class="info-stand hidden">
                     <h3>Retransmission digitale de la journée </h3>
                     <p class="info-text">Afin de rendre cet évènement international, nous allons digitaliser l'évènement. Durant toute la journée, un présentateur et un caméraman vont naviguer entre les différents stands et présentation, et vont retransmettre en direct l'évènement, afin de le partager à tous. La journée sera retransmise en live sur internet, sur YouTube et Twitch, avec des sous-titres en anglais en direct. </p>
+                    <img class="info-img" src="img/interview.jpg">
                     <img class="info-img" src="img/yt_logo_rgb_light.png">
                     <img class="info-img" src="img/TwitchExtrudedWordmarkPurple.png">
                 </div>
                 <div id="info-rect9" class="info-stand hidden">
-                    <p>HELLO WORLD !</p>
-                    <img src="img/mir100.png">
+                    <h3>Se sensibiliser ensemble à la consommation en vrac </h3>
+                    <p class="info-text">Parce que les déchets domestiques ont de fortes possibilités de finir dans le fleuve, il est urgent de vous donner les clés pour passer à l’achat de denrées alimentaires en vrac. Ce stand sera proposé en partenariat avec un commerce de vrac lyonnais afin de reconstituer un rayon de magasin en vrac et de comparer la quantité de déchets évités lorsque les achats sont effectués en vrac. Le gain pour vous ? Des balades sur des quais propres, au bord de fleuves purifiés et d’une biodiversité sauvegardée. </p>
+                    <img src="img/vrac.png" alt="vrac" class="info-img">
+                </div>
+                <div id="info-rect5"class="info-stand hidden" >
+                    <h3>S’encourager à consommer des produits locaux</h3>
+                    <p class="info-text">Vous souhaitez consommer local mais vous ne savez pas où trouver des producteurs près de chez vous ? La ville de Lyon a pensé vous a concocté une carte :</p>
+                    <a href="https://umap.openstreetmap.fr/fr/map/points-de-vente-produits-locaux_435582#8/45.861/4.724 ). ">Lien vers la carte</a>
+                    <p class="info-text">En consommant local, vous préservez votre patrimoine et donc vos emplois. De plus, ce mode de consommation vous permet de vous alimenter de produits de saisons, plus savoureux et évitant l’assèchement des fleuves. </p>
+                    <p class="info-text">Cette carte recense :</p>
+                    <ul>
+                        <li>Les marchés alimentaires qui ont été maintenus par dérogation pendant le confinement et le début du déconfinement</li>
+                        <li>Les épiceries locavores/vrac qui ont maintenu l’ouverture de leur commerce</li>
+                        <li>Les producteurs locaux qui se sont adaptés et ont proposé un service de commandes en ligne avec points relais et/ou vente directe, livraison etc…</li>
+                    </ul>
+                    <p class="info-text">Ce stand vous mettra à disposition la carte ainsi que la possibilité de découvrir tous les avantages de la consommation locale ! </p>
+                    <img src="img/local.png" alt="local map" class="info-img">
+                </div>
+                <div id="info-rect6" class="info-stand hidden">
+                    <h3>Passons à la toilette zéro déchet avec des produits ménagers naturels !</h3>
+                    <img class="info-img"src="img/savon.jpg">
+                    <p class="info-text">Si vous aimez prendre soin de vous en protégeant la nature, les savons, shampoings et crèmes solides sont faits pour vous ! <br>
+                        Et si vous vous demandez en quoi utiliser des savons solides permet de préserver votre santé : moins de déchets dans la nature, moins de déchets dans vos estomacs ! 
+                        <br>
+                        Cet atelier sera l’occasion pour vous de découvrir les meilleures recettes et marques de produits de toilette et ménagers solides et naturels. </p>
+                    <img class="info-img"src="img/ocean_plastique.png">
+                </div>
+                <div id="info-rect1" class="info-stand hidden">
+                    <h3>Mieux comprendre le textile durable</h3>
+                    <img class="info-img" src="img/jean.jpg">
+                    <p class="info-text">Le textile, ce n’est pas une mince affaire ! De nombreux procédés chimiques polluent l’environnement aquatique et nuit à la santé de certaines populations telles que les indous qui se baignent dans les eaux du Gange lors de fêtes religieuses. Aussi, les microfibres font partis des polluants à risques qui peuvent se retrouver dans nos assiettes. Mais en fait, comment consomme-t-on durable lorsqu’on parle de textile ? Un stand en partenariat avec Clear Fashion, une application pour choisir et privilégier les marques et vêtements éco-responsables, sera animé afin de mieux comprendre diverses problématiques : les matières à privilégier, les labels textiles durables tels qu’Oeko-tex ou GOAT, les nouvelles marques françaises privilégiant l’économie circulaire (1083, Hoopal, Ubac…), les moyens de fournir en seconde main, etc… Vous repartirez pleins de solutions en main pour protéger les fleuves et votre santé ! </p>
+                </div>
+                <div id="info-rect2" class="info-stand hidden">
+                    <h3>Voyager responsable</h3>
+                    <img src="img/avion.jpg">
+                    <p class="info-text">Parce qu’il ne s’agit pas uniquement de protéger les fleuves et sa propre santé, mais aussi de (re)découvrir la beauté de ce monde, l’association TheGreenRoad animera un stand sur le thème du voyage responsable pour mieux s’émerveiller de la biodiversité qui nous entoure !</p>
+                    <p class="info-text">Découvrir OnTheGreenRoad : <br>
+                        La situation complexe que l’on connaît actuellement (réchauffement climatique, injustices sociales, frustrations…) est le point de départ du voyage de Siméon et d’Alexandre. 
+                        Les deux cousins à l’origine du projet On The Green Road ont parcouru 18 000 km, traversé 26 pays, rencontré les paysans locaux caméras en main pour montrer les solutions locales à ces problèmes globaux. Aujourd’hui c’est toute une association qui s’est développée autour de ce documentaire afin de partager cette belle aventure et participer à une prise de conscience plus que nécessaire.  
+                    </p>
+                
                 </div>
                 <div id="info-rect10"class="info-stand hidden" >
+                    <h3>Les ustensiles pratiques et réutilisables</h3>
+                    <img class="info-img" src="img/outils.jpg">
+                    <p class="info-text">Le fleuve dans la gourde ou dans le verre à usage unique ? A vous décider ! Ce stand vous proposera foule de solutions pour vous fournir en objets pratiques réutilisables au quotidien. </p>
+                    
+                </div>
+                <div id="info-rect4"class="info-stand hidden" >
+                    <h3>Association Lyonnaises</h3>
+                    <h4>Anciela </h4>
+                    <img class="info-img" src="img/agir.png">
+                    <p class="info-text">Agir pour le climat, s’entraider face aux difficultés, réduire nos déchets, protéger la biodiversité, être à côté des personnes âgées et fragiles, favoriser une économie sociale et solidaire… De nombreuses initiatives existent pour construire une société écologique, solidaire et démocratique !
+                        Afin de les faire découvrir à tous les Lyonnais, l’association Anciela a rencontré les associations, initiatives et les personnes qui s’engagent et les a rassemblés dans ce guide. Pour que chacun puisse s’engager et agir pour les causes qui comptent pour lui, là où il se sentira bien et utile ! Un stand Anciela proposera de se procurer ce guide lors de l’évènement.
+                    </p>
+                    <h4>The Greener good</h4>
+                    <img class="info-img"src="img/conso.png">
+                    <p class="info-text">The Greener good est un tout nouveau guide destiné aux habitants de la métropole de Lyon. Il recense plus de 460 adresses, marques et structure locales engagées dans une démarche écoresponsable. Ses 228 pages recouvrent tous les domaines de la vie quotidienne : alimentation durable, vêtements et accessoires écoresponsables, hygiène et bien-être, maison et habitat écologiques, vie pratique, parents et enfants. Fort de nombreuses pages d’explications des enjeux et de conseils pratiques, il deviendra un bel outil pour ceux pour ceux et celles qui souhaitent repenser leurs habitudes de consommation ! Un stand The Greener Good proposera de se procurer ce guide lors de l’évènement.</p>
+                </div>
+                <div id="info-rect7" class="info-stand hidden">
+                    <h3>Mur de solutions</h3>
+                    <p class="info-text">Maintenant que vous avez (re)découverts les liens des fleuves avec les Hommes et les problèmatiques engendrées, nous vous proposons d'agir en conséquence pour sa protection. C'est très simple : le mur d'actions présente moins de 15 solutions ultra-concrètes et efficaces pour vivre plus durablement au quotidien. Vous aurez la possibilité de choisir une solution présente sur les grandes pancartes du mur de solutions et de vous faire photographier avec cette dernière. La photo sera immédiatement développée et vous pourrez la conserver, comme un rappel d'un défi tout simple à effectuer ce mois-ci pour améliorer votre bien-être et protéger les fleuves. Enfin, vous pourrez défier vos amis sur l'application WAG pour une aventure plus entrainante!</p>
+                  
+                </div>
+                <div class="info-stand hidden" id="about">
+                    <img src="img/nous.jpg" alt="the best squad" class="info-img">
+                    <p class="info-text">Dans le cadre de notre cursus à l’emlyon business school, nous avons travaillé sur un Projet Innovation adressé par la CNR (Compagnie Nationale du Rhône). Nous avons ainsi dû imaginer un concept novateur pour la première journée mondiale des fleuves.
+                        Vous trouverez sur cette page notre prototype, qui vous permet d’avoir un aperçu des différents stands que vous pourriez être amenés à découvrir le jour J.</p>
+                </div>
+                <!-- <div id="info-rect17" class="info-stand hidden">
                     <p>HELLO WORLD !</p>
                     <img src="img/mir100.png">
-                </div>
-                <div id="info-rect11" class="info-stand hidden">
+                </div> -->
+                <!-- <div id="info-rect18" class="info-stand hidden">
                     <p>HELLO WORLD !</p>
                     <img src="img/mir100.png">
-                </div>
-                <div id="info-rect12" class="info-stand hidden">
-                    <p>HELLO WORLD !</p>
-                    <img src="img/mir100.png">
-                </div>
-                <div id="info-rect13" class="info-stand hidden">
-                    <p>HELLO WORLD !</p>
-                    <img src="img/mir100.png">
-                </div>
-                <div id="info-rect14"class="info-stand hidden" >
-                    <p>HELLO WORLD !</p>
-                    <img src="img/mir100.png">
-                </div>
-                <div id="info-rect15"class="info-stand hidden" >
-                    <p>HELLO WORLD !</p>
-                    <img src="img/mir100.png">
-                </div>
-                <div id="info-rect16" class="info-stand hidden">
-                    <p>HELLO WORLD !</p>
-                    <img src="img/mir100.png">
-                </div>
-                <div id="info-rect17" class="info-stand hidden">
-                    <p>HELLO WORLD !</p>
-                    <img src="img/mir100.png">
-                </div>
-                <div id="info-rect18" class="info-stand hidden">
-                    <p>HELLO WORLD !</p>
-                    <img src="img/mir100.png">
-                </div>
+                </div> -->
             </div>
             <div class="footer"></div>
         
